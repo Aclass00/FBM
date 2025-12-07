@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pro Football Manager</title>
+    <!-- Tailwind عبر CDN (ممكن يُترك في البداية/ليس سبب توقف الموقع) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -18,32 +19,9 @@
       .dark ::-webkit-scrollbar-track { background: #1e293b; }
       .dark ::-webkit-scrollbar-thumb { background: #475569; }
     </style>
-    <!-- importmap موجود لدعم البيئات التي تستعملها في dev (ليس ضروري للإنتاج لكن لا يضر) -->
-    <script type="importmap">
-    {
-      "imports": {
-        "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
-        "react/": "https://aistudiocdn.com/react@^19.2.1/",
-        "react": "https://aistudiocdn.com/react@^19.2.1",
-        "react-dom": "https://aistudiocdn.com/react-dom@^19.2.1",
-        "react-dom/client": "https://aistudiocdn.com/react-dom@^19.2.1/client",
-        "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
-        "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0",
-        "firebase/app": "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js",
-        "firebase/auth": "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js",
-        "firebase/firestore": "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js",
-        "firebase/analytics": "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js",
-        "firebase/": "https://aistudiocdn.com/firebase@^12.6.0/"
-      }
-    }
-    </script>
-    <link rel="stylesheet" href="/index.css">
   </head>
   <body class="bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-200">
     <div id="root"></div>
-    <!-- السطر التالي خاص لتطوير Vite فقط (لا يستخدم مباشرة في الإنتاج) -->
-    <!-- عند build سيتم إنتاج dist/assets/index-xxxx.js وسيقوم Vite بتعديل المسارات -->
-    <!-- لذا اتركه كما هو، مع التأكد أن build يعمل تلقائي في Vercel وليس يدوياً -->
-    <script type="module" src="/src/index.tsx"></script>
+    <!-- لا تضف أي script هنا إطلاقًا. Vite/Vercel سيضيفون ملفات الجافاسكريبت الناتجة من البناء تلقائيًا -->
   </body>
 </html>
